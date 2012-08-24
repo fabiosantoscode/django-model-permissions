@@ -12,8 +12,8 @@ from django.core.exceptions import PermissionDenied
 from models import Example
 
 
-class SimpleTest(TestCase):
-    def test_code_example(self):
+class CodeExamples(TestCase):
+    def test_readme_example(self):
         'test the code example in README.md'
         
         permission = Permission.objects.get(
@@ -57,8 +57,12 @@ class SimpleTest(TestCase):
         Checks example
         '''
         
+        model.lock()
+        
+        "You can use the above idiom, or you may want to check whether a method is locked beforehand."
+        
         from modelpermissions import checks
         
-        get_id_locked = checks.is_locked(model,'get_id')
+        get_id_locked = checks.is_locked(model, 'get_id')
         
-        
+        assert get_id_locked #remove this

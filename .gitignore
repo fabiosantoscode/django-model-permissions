@@ -29,3 +29,5 @@ pip-log.txt
 #Virtualenv
 venv*
 
+#Test project database
+db.db

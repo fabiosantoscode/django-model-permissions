@@ -32,7 +32,6 @@ model = Example.objects.create(name='name')
 
 try:
     model.get_id()
-    assert False #remove this
 except PermissionDenied:
     'django.core.exceptions.PermissionDenied was thrown'
 ```
